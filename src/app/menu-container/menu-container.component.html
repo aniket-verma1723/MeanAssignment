@@ -2,9 +2,9 @@
     <div class="col s12">
       <div class="card">
         <div class="card-content white-text">
-          <div class="row">
-            <div class="col s5">
-              <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="col">
+            <div class="col s12">
+              <form [formGroup]="menuForm" (ngSubmit)="onSubmit()">
                 <div class="input-field col s12">
                     <input type="text" name="name" formControlName='name' placeholder="Name">
                     </div>
@@ -34,10 +34,101 @@
                 </div>
               </form>
             </div>
-         
           </div>
         </div>
       </div>
     </div>
-  
+  <div class="col s12">
+    <div class="col s7">
+      Mini Thali
+      <table class="responsive-table highlight" *ngIf="miniThali">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Small</th>
+              <th>Large</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tr *ngFor="let thali of miniThali" >
+            <td>{{thali.name}}</td>
+            <td>{{thali.small}}</td>
+            <td>{{thali.large}}</td>
+            <td>
+                <a class="action-btn" (click)="onEdit(thali)">
+                  <i class="material-icons">edit</i>
+                </a>
+                <a class="action-btn" (click)="onDelete(thali.uuid)">
+                  <i class="material-icons">delete</i>
+                </a>
+              </td>
+          </tr>
+        </table>
+        <div *ngIf="!miniThali" style="color: black;">
+no data  found
+        </div>
+  </div>
+  </div>
+  <div class="col s12">
+    <div class="col s7">
+      Meals
+      <table class="responsive-table highlight" *ngIf="meals">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Small</th>
+              <th>Large</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tr *ngFor="let thali of meals" >
+            <td>{{thali.name}}</td>
+            <td>{{thali.small}}</td>
+            <td>{{thali.large}}</td>
+            <td>
+                <a class="action-btn" (click)="onEdit(thali)">
+                  <i class="material-icons">edit</i>
+                </a>
+                <a class="action-btn" (click)="onDelete(thali.uuid)">
+                  <i class="material-icons">delete</i>
+                </a>
+              </td>
+          </tr>
+        </table>
+        <div *ngIf="!meals" style="color: black;">
+          no data found
+        </div>
+  </div>
+  </div>
+  <div class="col s12">
+    <div class="col s7">
+Snacks
+      <table class="responsive-table highlight"  *ngIf="snacks">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Small</th>
+              <th>Large</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tr *ngFor="let thali of snacks" >
+            <td>{{thali.name}}</td>
+            <td>{{thali.small}}</td>
+            <td>{{thali.large}}</td>
+            <td>
+                <a class="action-btn" (click)="onEdit(thali)">
+                  <i class="material-icons">edit</i>
+                </a>
+                <a class="action-btn" (click)="onDelete(thali.uuid)">
+                  <i class="material-icons">delete</i>
+                </a>
+              </td>
+          </tr>
+        </table>
+        <div *ngIf="!snacks" style="color: black;">
+No data found
+        </div>
+  </div>
+  </div>
   </div>
