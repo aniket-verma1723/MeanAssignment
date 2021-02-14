@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginContainerComponent } from './login-container/login-container.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MenuContainerComponent } from './menu-container/menu-container.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginContainerComponent
+    LoginContainerComponent,
+    MenuContainerComponent
   ],
   imports: [
     BrowserModule,
